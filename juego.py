@@ -1,14 +1,19 @@
 from random import randint
 
+# Throwing a dice
 def dice(): return randint(1, 6)
+
+# Throwing two dices
 def dices(): return (dice(), dice())
 
+# Throwing two dices, calculate points
 def simpleRound():
 	midres = dices()
 	if midres[0] == 4: return midres[1]
 	if midres[1] == 4: return midres[0]
 	return 0
 
+# A round for a player
 # Player is an object with a "choose" method,
 # which gets the first result,
 # and returns whether it wants to throw again or not
@@ -36,6 +41,7 @@ class Maria:
 		if self.opscore > first: return True
 		return first <= 3
 
+# A match, which consists of two rounds, one for each player
 def match():
 	juanscore = round(Juan())
 	mariascore = round(Maria(juanscore))
@@ -43,6 +49,7 @@ def match():
 	if juanscore > mariascore: return -1
 	return 0
 
+# Several matches, recording wins of each player and draws
 def bigMatch(size):
 	draws = 0
 	juanwins = 0
