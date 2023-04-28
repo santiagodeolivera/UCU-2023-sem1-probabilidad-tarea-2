@@ -32,6 +32,7 @@ class Juan:
 	def choose(self, first):
 		return first <= 3
 
+# "opscore" means "opponent's score"
 class Maria:
 	def __init__(self, opscore):
 		self.opscore = opscore
